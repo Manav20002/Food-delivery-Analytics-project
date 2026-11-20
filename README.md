@@ -1,32 +1,37 @@
-# Food-delivery-Analytics-project
-Food Delivery Operations Analytics using Python, Pandas, NumPy, Matplotlib and Seaborn to analyze delivery performance, revenue, peak hours, cancellations and operational efficiency.
 # Food Delivery Operations Analytics
 
-A data analysis project focused on understanding and improving food delivery operations using Python. This project analyzes order data to uncover insights related to delivery performance, restaurant revenue, peak ordering hours, order status, cancellations, delays and customer order patterns.
+**Project 8 | FoodTech / Logistics | Python Data Analytics**
 
-Using Python libraries such as Pandas, NumPy, Matplotlib and Seaborn, the project transforms raw order data into meaningful insights and visualizations that can help identify operational bottlenecks and support better business decisions.
+## Objective
+Analyse delivery orders to assess delivery performance, order outcomes, restaurant revenue, city-level operations, peak ordering hours, and payment-mode revenue.
 
-### Project Objectives
-- Analyze delivery time performance across different cities.
-- Identify restaurants with the highest order value.
-- Discover peak ordering hours.
-- Analyze delivered, delayed and cancelled orders.
-- Examine order value, payment patterns and revenue trends.
-- Detect outliers in delivery time using statistical methods.
-- Provide data-driven recommendations to improve delivery operations.
+## Dataset
+`08_food_delivery.csv` contains 500 orders and these columns: Order_ID, City, Restaurant, Order_Value, Distance_km, Delivery_Time_Min, Order_Status, Payment_Mode, Order_Hour.
 
-### Tools & Technologies
+## Tools
 - Python
 - Pandas
 - NumPy
 - Matplotlib
-- Seaborn
-- Jupyter Notebook / Python scripts
 
-### Key Insights
-The analysis explores city-wise delivery performance, restaurant revenue contribution, peak order timings, order status distribution, delays and cancellations to highlight opportunities for operational improvement.
+## Tasks covered
+109–123: dataset inspection, missing values, duplicate IDs, status shares, city delivery times, restaurant ranking and average order value, peak ordering hours, delivery time by status, city cancellation/delay rates, NumPy median and standard deviation, IQR outliers, delivery-time bands, revenue pivot by city/payment mode, and recommendations.
 
-### Project Type
-Beginner-level Data Analytics Project | B.Tech 1st Year | Python Data Analysis
+## Cleaning choices
+- 7 delivery-time values are missing. These rows remain included in total-order, status and revenue analysis, but are excluded from delivery-time statistics rather than assigned invented times.
+- There are no duplicate Order_ID values.
+- Delivery-time bands use project-defined thresholds: Fast <= 30 min; Standard 31–45 min; Delayed > 45 min. These are analytical labels, not external service standards.
+- IQR outlier flags are not automatically deleted; they are preserved for investigation.
 
-*This project is created for educational and analytical purposes.*
+## Run
+1. Place the CSV and `food_delivery_analysis.py` in the same folder.
+2. Install packages: `pip install pandas numpy matplotlib`
+3. Run: `python food_delivery_analysis.py`
+
+The script creates `outputs/` and `charts/`.
+
+## Deliverables
+- `food_delivery_analysis.py`: commented code for Tasks 109–123
+- `outputs/`: analysis tables and text summaries
+- `charts/`: six visualizations
+- `SRS.docx`: requirements specification
